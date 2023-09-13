@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\ContactController;
 use App\Http\Controllers\Api\ProjectController;
 use App\Models\Project;
 use Illuminate\Http\Request;
@@ -21,3 +22,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::apiResource('projects', ProjectController::class);
+
+Route::post('/contact-message', [ContactController::class, 'message']);
